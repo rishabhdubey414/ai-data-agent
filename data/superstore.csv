@@ -1,0 +1,6 @@
+order_date,region,category,sub_category,product_name,sales,profit,quantity
+2024-01-01,West,Technology,Phones,iPhone,1200,300,2
+2024-01-02,East,Furniture,Chairs,Office Chair,450,80,1
+2024-01-03,West,Technology,Accessories,Mouse,50,15,3
+2024-01-04,South,Office Supplies,Binders,Binder,30,5,5
+2024-01-05,Central,Technology,Phones,Samsung,900,200,1
