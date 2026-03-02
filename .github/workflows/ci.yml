@@ -1,0 +1,27 @@
+name: AI Data Agent CI/CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: docker build -t ai-data-agent .
+
+      - name: Run container
+        run: |
+          docker run -d -p 8000:8000 ai-data-agent
+          sleep 8
+
+      - name: Test API
+        run: |
+          curl -X POST http://localhost:8000/ask \
+          -H "Content-Type: application/json" \
+          -d '{"question":"total profit"}'
